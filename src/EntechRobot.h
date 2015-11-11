@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 #include <list>
+
 #include "RobotSubsystem.h"
 #include "DriveSubsystem.h"
 
@@ -12,7 +13,7 @@ class EntechRobot: public IterativeRobot
 {
 public:
     EntechRobot();
-    virtual ~EntechRobot::EntechRobot();
+    virtual ~EntechRobot();
 
     void RegisterSubsystem(RobotSubsystem *);
     

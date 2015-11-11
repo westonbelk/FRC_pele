@@ -1,14 +1,14 @@
 #include "OperatorButton.h"
 
 // Constructor for Joystick Button
-OperatorButton::OperatorButton(Joystick *js, UINT32 number)
+OperatorButton::OperatorButton(Joystick *js, uint32_t number)
     : m_js(js)
     , m_buttonNum(number)
     , m_lastState(false)
 {
 }
 
-OperatorButton::OperatorButton(UINT32 js, UINT32 number)
+OperatorButton::OperatorButton(uint32_t js, uint32_t number)
     : m_buttonNum(number)
     , m_lastState(false)
 {
@@ -16,7 +16,7 @@ OperatorButton::OperatorButton(UINT32 js, UINT32 number)
 }
 
 // Constructor for button from DigitalIO Board
-OperatorButton::OperatorButton(UINT32 number)
+OperatorButton::OperatorButton(uint32_t number)
     : m_js(NULL)	
     , m_buttonNum(number)
     , m_lastState(false)

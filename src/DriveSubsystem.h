@@ -2,16 +2,18 @@
 #define _DRIVE_SUBSYSTEM_H
 
 #include <WPILib.h>
+#include <Victor.h>
+
 #include "RobotSubsystem.h"
 
 class DriveSubsystem : public RobotSubsystem
 {
 private:
     Joystick   *m_joystick;
-    CANTalon   *m_frmotor;
-    CANTalon   *m_flmotor;
-    CANTalon   *m_rrmotor;
-    CANTalon   *m_rlmotor;
+    Victor   *m_frmotor;
+    Victor   *m_flmotor;
+    Victor   *m_rrmotor;
+    Victor   *m_rlmotor;
     RobotDrive *m_robotDrive;
     
 public:

@@ -1,4 +1,6 @@
-#include "WPILib.h"
+#include <WPILib.h>
+
+#include "DriveSubsystem.h"
 #include "RobotSubsystem.h"
 #include "RobotConstants.h"
 
@@ -22,12 +24,15 @@ DriveSubsystem::~DriveSubsystem()
 void DriveSubsystem::RobotInit() 
 {
     m_joystick = new Joystick(0);
-    m_flmotor = new CanTalonSRX(c_flmotor_CANid);
-    m_frmotor = new CanTalonSRX(c_frmotor_CANid);
-    m_rlmotor = new CanTalonSRX(c_rlmotor_CANid);
-    m_rrmotor = new CanTalonSRX(c_rrmotor_CANid);
+
+    m_flmotor = new Victor(c_flmotor_PWMid);
+    m_frmotor = new Victor(c_frmotor_PWMid);
+    m_rlmotor = new Victor(c_rlmotor_PWMid);
+    m_rrmotor = new Victor(c_rrmotor_PWMid);
+
     m_robotDrive = new RobotDrive(m_flmotor, m_rlmotor, m_frmotor, m_rrmotor);
     m_robotDrive->SetSafetyEnabled(false);
+    
     m_robotDrive->SetInvertedMotor(RobotDrive::kFrontLeftMotor, false);
     m_robotDrive->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
     m_robotDrive->SetInvertedMotor(RobotDrive::kRearLeftMotor, false);

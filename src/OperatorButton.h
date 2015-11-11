@@ -7,8 +7,9 @@ class OperatorButton {
 public:
     enum ButtonState { kReleased=0, kPressed=1, kJustPressed, kJustReleased };
 	
-    OperatorButton(Joystick *js, UINT32 number);
-    OperatorButton(UINT32 js, UINT32 number);
+    OperatorButton(Joystick *js, uint32_t number);
+    OperatorButton(uint32_t js, uint32_t number);
+    OperatorButton(uint32_t number);
     ~OperatorButton();
     ButtonState Get(void);
     bool GetBool(void);

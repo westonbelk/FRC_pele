@@ -1,5 +1,7 @@
-#include "WPILib.h"
+#include <WPILib.h>
+
 #include "RobotSubsystem.h"
+#include "EntechRobot.h"
 
 RobotSubsystem::RobotSubsystem(std::string name)
     : m_name(name)
@@ -15,7 +17,7 @@ RobotSubsystem::~RobotSubsystem()
 
 const char *RobotSubsystem::GetName()
 {
-    return c_str(m_name);
+    return m_name.c_str();
 }
 
 /********************************** Init Routines *************************************/

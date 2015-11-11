@@ -1,4 +1,4 @@
-#include "WPILib.h"
+#include <WPILib.h>
 
 #include "EntechRobot.h"
 
@@ -9,11 +9,15 @@ EntechRobot::EntechRobot()
     m_robotSubsystems.clear();
 }
 
+EntechRobot::~EntechRobot()
+{
+
+}
 
 void EntechRobot::RobotInit()
 {
     m_lw = LiveWindow::GetInstance();
-    m_drive = new DriveSubsystem(drive);
+    m_drive = new DriveSubsystem("drive");
 
     // Manage sub-systems
     for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
