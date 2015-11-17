@@ -68,20 +68,24 @@ void DriveSubsystem::TeleopPeriodic()
     double gyro_angle;
 
     if (m_joystick) {
-        jsX = -m_joystick->GetX();
-        jsY = -m_joystick->GetY();
-        jsT =  m_joystick->GetTwist();
+        jsX = m_joystick->GetX();
+        jsY = m_joystick->GetY();
         gyro_angle = 0.0;
     } else {
         jsX = 0.0;
         jsY = 0.0;
-        jsT = 0.0;
         gyro_angle = 0.0;
     }
 
-    // Invert the twist so that the robot spins in the correct direction.
-    jsT = jsT * -1;
+    /* Rotate the robot only if the trigger being held. */
+    if (m_joystick->GetTrigger()) {
+        jsT = m_joystick->GetTwist();
+    }
+    else {
+        jsT = 0.0;
+    }
 
+    /* Drive the robot */
     m_robotDrive->MecanumDrive_Cartesian(jsX, jsY, jsT, gyro_angle);
 }
 
