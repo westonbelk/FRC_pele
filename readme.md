@@ -1,1 +1,1 @@
-Template code for an Entech Robot
+Pele rewrite for outreach purposes.
