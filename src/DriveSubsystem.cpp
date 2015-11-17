@@ -33,10 +33,10 @@ void DriveSubsystem::RobotInit()
     m_robotDrive = new RobotDrive(m_flmotor, m_rlmotor, m_frmotor, m_rrmotor);
     m_robotDrive->SetSafetyEnabled(false);
     
-    m_robotDrive->SetInvertedMotor(RobotDrive::kFrontLeftMotor, false);
-    m_robotDrive->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
-    m_robotDrive->SetInvertedMotor(RobotDrive::kRearLeftMotor, false);
-    m_robotDrive->SetInvertedMotor(RobotDrive::kRearRightMotor, true);
+    m_robotDrive->SetInvertedMotor(RobotDrive::kFrontLeftMotor, c_kflmotor_inversed);
+    m_robotDrive->SetInvertedMotor(RobotDrive::kRearLeftMotor, c_krlmotor_inversed);
+    m_robotDrive->SetInvertedMotor(RobotDrive::kFrontRightMotor, c_kfrmotor_inversed);
+    m_robotDrive->SetInvertedMotor(RobotDrive::kRearRightMotor, c_krrmotor_inversed);
 }
 
 void DriveSubsystem::DisabledInit() 
@@ -78,7 +78,10 @@ void DriveSubsystem::TeleopPeriodic()
         jsT = 0.0;
         gyro_angle = 0.0;
     }
-    
+
+    // Invert the twist so that the robot spins in the correct direction.
+    jsT = jsT * -1;
+
     m_robotDrive->MecanumDrive_Cartesian(jsX, jsY, jsT, gyro_angle);
 }
 
