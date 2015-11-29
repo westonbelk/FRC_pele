@@ -62,19 +62,21 @@ void DriveSubsystem::DisabledPeriodic()
     m_robotDrive->MecanumDrive_Cartesian(0.0, 0.0, 0.0, 0.0);
 }
 
-void DriveSubsystem::TeleopPeriodic() 
+
+/*
+    * The gyroscope is not implemented at all.
+    * In the future I plan for it to be optional.
+*/
+void DriveSubsystem::TeleopPeriodic()
 {
     double jsX, jsY, jsT;
-    double gyro_angle;
 
     if (m_joystick) {
         jsX = m_joystick->GetX();
         jsY = m_joystick->GetY();
-        gyro_angle = 0.0;
     } else {
         jsX = 0.0;
         jsY = 0.0;
-        gyro_angle = 0.0;
     }
 
     /* Rotate the robot only if the trigger being held. */
@@ -85,8 +87,8 @@ void DriveSubsystem::TeleopPeriodic()
         jsT = 0.0;
     }
 
-    /* Drive the robot */
-    m_robotDrive->MecanumDrive_Cartesian(jsX, jsY, jsT, gyro_angle);
+    /* Move the robot */
+    m_robotDrive->MecanumDrive_Cartesian(jsX, jsY, jsT);
 }
 
 void DriveSubsystem::AutonomousPeriodic() 

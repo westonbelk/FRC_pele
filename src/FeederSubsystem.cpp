@@ -50,6 +50,9 @@ void FeederSubsystem::TestInit()
 
 void FeederSubsystem::DisabledPeriodic()  
 {
+        /* Disable the feeder motors */
+    m_lfeedermotor->Set(0, 0);
+    m_rfeedermotor->Set(0, 0);
 }
 
 void FeederSubsystem::TeleopPeriodic() 
