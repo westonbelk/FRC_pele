@@ -14,11 +14,13 @@ const bool c_kfrmotor_inversed = true;
 const bool c_krrmotor_inversed = true;
 
 // Feeder motors
-const uint32_t c_lfeedermotor_PWMid = 5;
-const uint32_t c_rfeedermotor_PWMid = 6;
+const uint32_t c_loadermotor_PWMid = 5;
+const uint32_t c_shootermotor1_PWMid = 6;
+const uint32_t c_shootermotor2_PWMid = 3;
+const uint32_t c_feedermotor_PWMid = 7;
 /* ^ ^ ^ THESE ARE WRONG */
 
 // Buttons on the joystick
-const uint32_t c_jsthumb_id = 7; // THIS IS WRONG
+const uint32_t c_jsthumb_id = 4; // THIS IS WRONG
 
 #endif

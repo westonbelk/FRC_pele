@@ -7,8 +7,10 @@
 FeederSubsystem::FeederSubsystem(std::string name)
     : RobotSubsystem(name)
     , m_joystick(NULL)
-    , m_lfeedermotor(NULL)
-    , m_rfeedermotor(NULL)
+    , m_loadermotor(NULL)
+    , m_shootermotor1(NULL)
+    , m_shootermotor2(NULL)
+	, m_feedermotor(NULL)
 {
 }
 
@@ -22,8 +24,10 @@ void FeederSubsystem::RobotInit()
 {
     m_joystick = new Joystick(0);
 
-    m_lfeedermotor = new Victor(c_lfeedermotor_PWMid);
-    m_rfeedermotor = new Victor(c_rfeedermotor_PWMid);
+    m_loadermotor = new Victor(c_loadermotor_PWMid);
+    m_shootermotor1 = new Victor(c_shootermotor1_PWMid);
+    m_shootermotor2 = new Victor(c_shootermotor2_PWMid);
+    m_feedermotor = new Victor(c_feedermotor_PWMid);
 }
 
 void FeederSubsystem::DisabledInit() 
@@ -33,8 +37,10 @@ void FeederSubsystem::DisabledInit()
 void FeederSubsystem::TeleopInit() 
 {
     /* Enable the feeder motors */
-    m_lfeedermotor->Set(1, 0);
-    m_rfeedermotor->Set(1, 0);
+    m_loadermotor->Set(0, 0);
+    m_shootermotor1->Set(0, 0);
+    m_shootermotor2->Set(0, 0);
+    m_feedermotor->Set(0, 0);
 
 }
 
@@ -51,19 +57,30 @@ void FeederSubsystem::TestInit()
 void FeederSubsystem::DisabledPeriodic()  
 {
         /* Disable the feeder motors */
-    m_lfeedermotor->Set(0, 0);
-    m_rfeedermotor->Set(0, 0);
+    m_loadermotor->Set(0, 0);
+    m_shootermotor1->Set(0, 0);
+    m_shootermotor2->Set(0, 0);
+    m_feedermotor->Set(0, 0);
 }
 
 void FeederSubsystem::TeleopPeriodic() 
 {
+    if (m_joystick->GetRawButton(c_jsthumb_id)) {
+        m_shootermotor1->Set(-1, 0);
+        m_shootermotor2->Set(-1, 0);
+        m_loadermotor->Set(1, 0);
+        m_feedermotor->Set(1, 0);
+    }
+    else {
+    	m_shootermotor1->Set(0, 0);
+    	m_shootermotor2->Set(0, 0);
+    	m_loadermotor->Set(0, 0);
+    	m_feedermotor->Set(0, 0);
+    }
 }
 
 void FeederSubsystem::AutonomousPeriodic() 
 {
-    if (m_joystick->GetRawButton(c_jsthumb_id)) {
-        // Fire!
-    }
 }
 
 void FeederSubsystem::TestPeriodic() 

@@ -10,8 +10,10 @@ class FeederSubsystem : public RobotSubsystem
 {
 private:
     Joystick   *m_joystick;
-    Victor     *m_lfeedermotor;
-    Victor     *m_rfeedermotor;
+    Victor     *m_loadermotor;
+    Victor     *m_shootermotor1;
+    Victor     *m_shootermotor2;
+    Victor     *m_feedermotor;
     
 public:
     FeederSubsystem(std::string name="feeder");
