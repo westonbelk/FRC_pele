@@ -1,12 +1,12 @@
-#ifndef _FEEDER_SUBSYSTEM_H
-#define _FEEDER_SUBSYSTEM_H
+#ifndef _SHOOTER_SUBSYSTEM_H
+#define _SHOOTER_SUBSYSTEM_H
 
 #include <WPILib.h>
 #include <Victor.h>
 
 #include "RobotSubsystem.h"
 
-class FeederSubsystem : public RobotSubsystem
+class ShooterSubsystem : public RobotSubsystem
 {
 private:
     Joystick   *m_joystick;
@@ -16,8 +16,8 @@ private:
     Victor     *m_shootermotor2;
     
 public:
-    FeederSubsystem(std::string name="feeder");
-    virtual ~FeederSubsystem();
+    ShooterSubsystem(std::string name="feeder");
+    virtual ~ShooterSubsystem();
     
     /********************************** Init Routines *************************************/
 

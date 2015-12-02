@@ -4,7 +4,7 @@
 
 EntechRobot::EntechRobot()
     : m_drive(NULL)
-    , m_feeder(NULL)
+    , m_shooter(NULL)
     , m_lw(NULL)
 {
     m_robotSubsystems.clear();
@@ -19,7 +19,7 @@ void EntechRobot::RobotInit()
 {
     m_lw = LiveWindow::GetInstance();
     m_drive = new DriveSubsystem("drive");
-    m_feeder = new FeederSubsystem("feeder");
+    m_shooter = new ShooterSubsystem("shooter");
 
     // Manage sub-systems
     for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();

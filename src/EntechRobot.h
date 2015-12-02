@@ -6,7 +6,7 @@
 
 #include "RobotSubsystem.h"
 #include "DriveSubsystem.h"
-#include "FeederSubsystem.h"
+#include "ShooterSubsystem.h"
 
 #define ENTECH_ROBOT   dynamic_cast <EntechRobot &>(RobotBase::getInstance())
 
@@ -20,7 +20,7 @@ public:
     
 private:
     DriveSubsystem *m_drive;
-    FeederSubsystem *m_feeder;
+    ShooterSubsystem *m_shooter;
     LiveWindow *m_lw;
 
     std::list<RobotSubsystem *> m_robotSubsystems;

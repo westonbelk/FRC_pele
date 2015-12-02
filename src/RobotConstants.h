@@ -19,7 +19,8 @@ const uint32_t c_loadermotor_PWMid = 5;
 const uint32_t c_shootermotor1_PWMid = 6;
 const uint32_t c_shootermotor2_PWMid = 3;
 
-// Buttons on the joystick
-const uint32_t c_jsthumb_id = 4; // THIS IS WRONG
+// Joystick buttons
+const uint32_t c_jsthumb_buttonid = 2;
+
 
 #endif
