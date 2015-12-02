@@ -78,7 +78,7 @@ void ShooterSubsystem::TeleopPeriodic()
      * Use the thumb button on the joystick
      * to to control the feeder and loader motors.
      */
-    if( m_joystick->GetRawButton(c_jsthumb_buttonid) ) {
+    if( m_joystick->GetRawButton(c_jsthumb_BTNid) ) {
         m_feedermotor->Set(1, 0);
         m_loadermotor->Set(1, 0);
     }
@@ -105,7 +105,7 @@ void ShooterSubsystem::TestPeriodic()
      * Shooter Motor 2      [PWM 3]     [Button 6]
      *
      */
-     
+
     if (m_joystick->GetRawButton(3))
         m_feedermotor->Set(1, 0);
     else

@@ -20,7 +20,7 @@ const uint32_t c_shootermotor1_PWMid = 6;
 const uint32_t c_shootermotor2_PWMid = 3;
 
 // Joystick buttons
-const uint32_t c_jsthumb_buttonid = 2;
+const uint32_t c_jsthumb_BTNid = 2;
 
 
 #endif
