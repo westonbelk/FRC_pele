@@ -18,7 +18,7 @@ public:
     ShooterSubsystem(std::string name = "feeder");
     virtual ~ShooterSubsystem();
 
-    /********************************** Init Routines *************************************/
+    /********************************** Init Routines **********************************/
 
     virtual void RobotInit();
     virtual void DisabledInit();
@@ -26,7 +26,7 @@ public:
     virtual void AutonomousInit();
     virtual void TestInit();
 
-    /********************************** Periodic Routines *************************************/
+    /********************************** Periodic Routines **********************************/
 
     virtual void DisabledPeriodic();
     virtual void AutonomousPeriodic();

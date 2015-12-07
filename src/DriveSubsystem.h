@@ -27,8 +27,7 @@ public:
     virtual void AutonomousInit();
     virtual void TestInit();
 
-    /********************************** Periodic Routines
-     * *************************************/
+    /********************************** Periodic Routines **********************************/
 
     virtual void DisabledPeriodic();
     virtual void AutonomousPeriodic();

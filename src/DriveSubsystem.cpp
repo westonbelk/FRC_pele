@@ -3,7 +3,6 @@
 #include "DriveSubsystem.h"
 #include "RobotSubsystem.h"
 #include "RobotConstants.h"
-#include <iostream>
 
 DriveSubsystem::DriveSubsystem(std::string name)
     : RobotSubsystem(name)
@@ -18,7 +17,7 @@ DriveSubsystem::DriveSubsystem(std::string name)
 
 DriveSubsystem::~DriveSubsystem() {}
 
-/********************************** Init Routines *************************************/
+/********************************** Init Routines **********************************/
 
 void DriveSubsystem::RobotInit()
 {
@@ -46,7 +45,7 @@ void DriveSubsystem::AutonomousInit() {}
 
 void DriveSubsystem::TestInit() {}
 
-/********************************** Periodic Routines *************************************/
+/********************************** Periodic Routines **********************************/
 
 void DriveSubsystem::DisabledPeriodic()
 {

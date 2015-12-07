@@ -16,7 +16,7 @@ ShooterSubsystem::ShooterSubsystem(std::string name)
 
 ShooterSubsystem::~ShooterSubsystem() {}
 
-/********************************** Init Routines *************************************/
+/********************************** Init Routines **********************************/
 
 void ShooterSubsystem::RobotInit()
 {
@@ -38,7 +38,7 @@ void ShooterSubsystem::AutonomousInit() {}
 
 void ShooterSubsystem::TestInit() {}
 
-/********************************** Periodic Routines *************************************/
+/********************************** Periodic Routines **********************************/
 
 void ShooterSubsystem::DisabledPeriodic()
 {

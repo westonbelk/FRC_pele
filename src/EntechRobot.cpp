@@ -18,7 +18,13 @@ void EntechRobot::RobotInit()
     m_drive = new DriveSubsystem("drive");
     m_shooter = new ShooterSubsystem("shooter");
 
-    // Manage sub-systems
+    /* 
+     * Iterate through each sub-system and run the
+     * appropriate function for the current mode.
+     * Descriptions for each mode can be found in
+     * RobotSubsystem.h
+     */
+
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->RobotInit();
@@ -27,8 +33,6 @@ void EntechRobot::RobotInit()
 
 void EntechRobot::DisabledInit()
 {
-
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->DisabledInit();
@@ -37,8 +41,6 @@ void EntechRobot::DisabledInit()
 
 void EntechRobot::DisabledPeriodic()
 {
-
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->DisabledPeriodic();
@@ -47,8 +49,6 @@ void EntechRobot::DisabledPeriodic()
 
 void EntechRobot::TeleopInit()
 {
-
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TeleopInit();
@@ -57,7 +57,6 @@ void EntechRobot::TeleopInit()
 
 void EntechRobot::TeleopPeriodic()
 {
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TeleopPeriodic();
@@ -66,8 +65,6 @@ void EntechRobot::TeleopPeriodic()
 
 void EntechRobot::AutonomousInit()
 {
-
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->AutonomousInit();
@@ -76,8 +73,6 @@ void EntechRobot::AutonomousInit()
 
 void EntechRobot::AutonomousPeriodic()
 {
-
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->AutonomousPeriodic();
@@ -86,8 +81,6 @@ void EntechRobot::AutonomousPeriodic()
 
 void EntechRobot::TestInit()
 {
-
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TestInit();
@@ -96,9 +89,9 @@ void EntechRobot::TestInit()
 
 void EntechRobot::TestPeriodic()
 {
+    /* Update Live Window */
     m_lw->Run();
 
-    // Manage sub-systems
     for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TestPeriodic();

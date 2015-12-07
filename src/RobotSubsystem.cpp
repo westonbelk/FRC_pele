@@ -17,7 +17,7 @@ const char* RobotSubsystem::GetName()
     return m_name.c_str();
 }
 
-/********************************** Init Routines *************************************/
+/********************************** Init Routines **********************************/
 
 void RobotSubsystem::RobotInit()
 {
@@ -44,7 +44,7 @@ void RobotSubsystem::TestInit()
     printf("Running RobotSubsystem::TestInit() for '%s'\n", GetName());
 }
 
-/********************************** Periodic Routines *************************************/
+/********************************** Periodic Routines **********************************/
 
 void RobotSubsystem::DisabledPeriodic()
 {
