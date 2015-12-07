@@ -87,7 +87,7 @@ void ShooterSubsystem::TestPeriodic()
      *
      * Make sure the follow information has not changed.
      * =================================================
-     * Feeder Motor         [PWM 7]     [Button 3] 
+     * Feeder Motor         [PWM 7]     [Button 3]
      * Loader Motor         [PWM 5]     [Button 5]
      * Shooter Motor 1      [PWM 3]     [Button 4]
      * Shooter Motor 2      [PWM 6]     [Button 6]
