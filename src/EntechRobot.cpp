@@ -10,10 +10,7 @@ EntechRobot::EntechRobot()
     m_robotSubsystems.clear();
 }
 
-EntechRobot::~EntechRobot()
-{
-
-}
+EntechRobot::~EntechRobot() {}
 
 void EntechRobot::RobotInit()
 {
@@ -22,7 +19,7 @@ void EntechRobot::RobotInit()
     m_shooter = new ShooterSubsystem("shooter");
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->RobotInit();
     }
@@ -32,7 +29,7 @@ void EntechRobot::DisabledInit()
 {
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->DisabledInit();
     }
@@ -42,7 +39,7 @@ void EntechRobot::DisabledPeriodic()
 {
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->DisabledPeriodic();
     }
@@ -52,7 +49,7 @@ void EntechRobot::TeleopInit()
 {
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TeleopInit();
     }
@@ -61,7 +58,7 @@ void EntechRobot::TeleopInit()
 void EntechRobot::TeleopPeriodic()
 {
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TeleopPeriodic();
     }
@@ -71,7 +68,7 @@ void EntechRobot::AutonomousInit()
 {
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->AutonomousInit();
     }
@@ -81,7 +78,7 @@ void EntechRobot::AutonomousPeriodic()
 {
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->AutonomousPeriodic();
     }
@@ -91,7 +88,7 @@ void EntechRobot::TestInit()
 {
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TestInit();
     }
@@ -102,13 +99,13 @@ void EntechRobot::TestPeriodic()
     m_lw->Run();
 
     // Manage sub-systems
-    for (std::list<RobotSubsystem *>::iterator it = m_robotSubsystems.begin();
+    for (std::list<RobotSubsystem*>::iterator it = m_robotSubsystems.begin();
          it != m_robotSubsystems.end(); ++it) {
         (*it)->TestPeriodic();
     }
 }
 
-void EntechRobot::RegisterSubsystem(RobotSubsystem *subsys)
+void EntechRobot::RegisterSubsystem(RobotSubsystem* subsys)
 {
     m_robotSubsystems.push_back(subsys);
 }

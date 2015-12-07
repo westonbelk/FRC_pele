@@ -6,19 +6,18 @@
 
 #include "RobotSubsystem.h"
 
-class ShooterSubsystem : public RobotSubsystem
-{
+class ShooterSubsystem : public RobotSubsystem {
 private:
-    Joystick   *m_joystick;
-    Victor     *m_feedermotor;
-    Victor     *m_loadermotor;
-    Victor     *m_shootermotor1;
-    Victor     *m_shootermotor2;
-    
+    Joystick* m_joystick;
+    Victor* m_feedermotor;
+    Victor* m_loadermotor;
+    Victor* m_shootermotor1;
+    Victor* m_shootermotor2;
+
 public:
-    ShooterSubsystem(std::string name="feeder");
+    ShooterSubsystem(std::string name = "feeder");
     virtual ~ShooterSubsystem();
-    
+
     /********************************** Init Routines *************************************/
 
     virtual void RobotInit();
@@ -28,10 +27,10 @@ public:
     virtual void TestInit();
 
     /********************************** Periodic Routines *************************************/
-    
+
     virtual void DisabledPeriodic();
     virtual void AutonomousPeriodic();
-    virtual void TeleopPeriodic();  
+    virtual void TeleopPeriodic();
     virtual void TestPeriodic();
 };
 #endif

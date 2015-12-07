@@ -10,77 +10,74 @@ RobotSubsystem::RobotSubsystem(std::string name)
     ENTECH_ROBOT.RegisterSubsystem(this);
 }
 
-RobotSubsystem::~RobotSubsystem()
-{
-	
-}
+RobotSubsystem::~RobotSubsystem() {}
 
-const char *RobotSubsystem::GetName()
+const char* RobotSubsystem::GetName()
 {
     return m_name.c_str();
 }
 
 /********************************** Init Routines *************************************/
 
-void RobotSubsystem::RobotInit() 
+void RobotSubsystem::RobotInit()
 {
-    printf("Running RobotSubsystem::RobotInit() for '%s'\n",GetName());
+    printf("Running RobotSubsystem::RobotInit() for '%s'\n", GetName());
 }
 
-void RobotSubsystem::DisabledInit() 
+void RobotSubsystem::DisabledInit()
 {
-    printf("Running RobotSubsystem::DisabledInit() for '%s'\n",GetName());
+    printf("Running RobotSubsystem::DisabledInit() for '%s'\n", GetName());
 }
 
-void RobotSubsystem::TeleopInit() 
+void RobotSubsystem::TeleopInit()
 {
-    printf("Running RobotSubsystem::TeleopInit() for '%s'\n",GetName());	
+    printf("Running RobotSubsystem::TeleopInit() for '%s'\n", GetName());
 }
 
-void RobotSubsystem::AutonomousInit() 
+void RobotSubsystem::AutonomousInit()
 {
-    printf("Running RobotSubsystem::AutonomousInit() for '%s'\n",GetName());		
+    printf("Running RobotSubsystem::AutonomousInit() for '%s'\n", GetName());
 }
 
-void RobotSubsystem::TestInit() 
+void RobotSubsystem::TestInit()
 {
-    printf("Running RobotSubsystem::TestInit() for '%s'\n",GetName());		
+    printf("Running RobotSubsystem::TestInit() for '%s'\n", GetName());
 }
 
 /********************************** Periodic Routines *************************************/
 
-void RobotSubsystem::DisabledPeriodic()  
+void RobotSubsystem::DisabledPeriodic()
 {
     if (!(m_counter % 100)) {
         m_counter = 0;
-        printf("Running RobotSubsystem::DisabledPeriodic() for '%s'\n",GetName());
+        printf("Running RobotSubsystem::DisabledPeriodic() for '%s'\n", GetName());
     }
     m_counter++;
 }
 
-void RobotSubsystem::TeleopPeriodic() 
+void RobotSubsystem::TeleopPeriodic()
 {
     if (!(m_counter % 100)) {
         m_counter = 0;
-        printf("Running RobotSubsystem::TeleopPeriodic() for '%s'\n",GetName());	
+        printf("Running RobotSubsystem::TeleopPeriodic() for '%s'\n", GetName());
     }
     m_counter++;
 }
 
-void RobotSubsystem::AutonomousPeriodic() 
+void RobotSubsystem::AutonomousPeriodic()
 {
     if (!(m_counter % 100)) {
         m_counter = 0;
-        printf("Running RobotSubsystem::AutonomousPeriodic() for '%s'\n",GetName());
+        printf("Running RobotSubsystem::AutonomousPeriodic() for '%s'\n", GetName());
     }
     m_counter++;
 }
 
-void RobotSubsystem::TestPeriodic() 
+void RobotSubsystem::TestPeriodic()
 {
     if (!(m_counter % 100)) {
         m_counter = 0;
-        printf("Running RobotSubsystem::TestPeriodic() for '%s'\n",GetName());	
+        printf("Running RobotSubsystem::TestPeriodic() for '%s'\n", GetName());
     }
     m_counter++;
 }

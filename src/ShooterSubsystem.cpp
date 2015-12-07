@@ -7,20 +7,18 @@
 ShooterSubsystem::ShooterSubsystem(std::string name)
     : RobotSubsystem(name)
     , m_joystick(NULL)
-	, m_feedermotor(NULL)
+    , m_feedermotor(NULL)
     , m_loadermotor(NULL)
     , m_shootermotor1(NULL)
     , m_shootermotor2(NULL)
 {
 }
 
-ShooterSubsystem::~ShooterSubsystem()
-{   
-}
+ShooterSubsystem::~ShooterSubsystem() {}
 
 /********************************** Init Routines *************************************/
 
-void ShooterSubsystem::RobotInit() 
+void ShooterSubsystem::RobotInit()
 {
     /* Create all of the input and output objects */
 
@@ -32,25 +30,17 @@ void ShooterSubsystem::RobotInit()
     m_shootermotor2 = new Victor(c_shootermotor2_PWMid);
 }
 
-void ShooterSubsystem::DisabledInit() 
-{
-}
+void ShooterSubsystem::DisabledInit() {}
 
-void ShooterSubsystem::TeleopInit() 
-{
-}
+void ShooterSubsystem::TeleopInit() {}
 
-void ShooterSubsystem::AutonomousInit() 
-{
-}
+void ShooterSubsystem::AutonomousInit() {}
 
-void ShooterSubsystem::TestInit() 
-{
-}
+void ShooterSubsystem::TestInit() {}
 
 /********************************** Periodic Routines *************************************/
 
-void ShooterSubsystem::DisabledPeriodic()  
+void ShooterSubsystem::DisabledPeriodic()
 {
     /* Disable all of the motors */
     m_feedermotor->Set(0, 0);
@@ -59,7 +49,7 @@ void ShooterSubsystem::DisabledPeriodic()
     m_shootermotor2->Set(0, 0);
 }
 
-void ShooterSubsystem::TeleopPeriodic() 
+void ShooterSubsystem::TeleopPeriodic()
 {
     /* Control the speed of the shooter flywheel with the throttle.
      * GetThrottle() returns a float between -1 and 1
@@ -70,7 +60,7 @@ void ShooterSubsystem::TeleopPeriodic()
      *
      * The motors of the flywheel are set to the value of the throttle.
      */
-    float m_jsthrottle = ((m_joystick->GetThrottle() * -1) + 1)/2;
+    float m_jsthrottle = ((m_joystick->GetThrottle() * -1) + 1) / 2;
     m_shootermotor1->Set(-m_jsthrottle, 0);
     m_shootermotor2->Set(-m_jsthrottle, 0);
 
@@ -78,7 +68,7 @@ void ShooterSubsystem::TeleopPeriodic()
      * Use the thumb button on the joystick
      * to to control the feeder and loader motors.
      */
-    if( m_joystick->GetRawButton(c_jsthumb_BTNid) ) {
+    if (m_joystick->GetRawButton(c_jsthumb_BTNid)) {
         m_feedermotor->Set(1, 0);
         m_loadermotor->Set(1, 0);
     }
@@ -88,11 +78,9 @@ void ShooterSubsystem::TeleopPeriodic()
     }
 }
 
-void ShooterSubsystem::AutonomousPeriodic() 
-{
-}
+void ShooterSubsystem::AutonomousPeriodic() {}
 
-void ShooterSubsystem::TestPeriodic() 
+void ShooterSubsystem::TestPeriodic()
 {
     /* Use the numbered buttons on the top to control
      * the motors individually for testing purposes.
@@ -111,18 +99,15 @@ void ShooterSubsystem::TestPeriodic()
     else
         m_feedermotor->Set(0, 0);
 
-
     if (m_joystick->GetRawButton(5))
         m_loadermotor->Set(1, 0);
     else
         m_loadermotor->Set(0, 0);
 
-
     if (m_joystick->GetRawButton(4))
         m_shootermotor2->Set(-1, 0);
     else
         m_shootermotor2->Set(0, 0);
-
 
     if (m_joystick->GetRawButton(6))
         m_shootermotor1->Set(-1, 0);

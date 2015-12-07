@@ -8,23 +8,22 @@
 #include "DriveSubsystem.h"
 #include "ShooterSubsystem.h"
 
-#define ENTECH_ROBOT   dynamic_cast <EntechRobot &>(RobotBase::getInstance())
+#define ENTECH_ROBOT dynamic_cast<EntechRobot&>(RobotBase::getInstance())
 
-class EntechRobot: public IterativeRobot
-{
+class EntechRobot : public IterativeRobot {
 public:
     EntechRobot();
     virtual ~EntechRobot();
 
-    void RegisterSubsystem(RobotSubsystem *);
-    
-private:
-    DriveSubsystem *m_drive;
-    ShooterSubsystem *m_shooter;
-    LiveWindow *m_lw;
+    void RegisterSubsystem(RobotSubsystem*);
 
-    std::list<RobotSubsystem *> m_robotSubsystems;
-    
+private:
+    DriveSubsystem* m_drive;
+    ShooterSubsystem* m_shooter;
+    LiveWindow* m_lw;
+
+    std::list<RobotSubsystem*> m_robotSubsystems;
+
     virtual void RobotInit();
     virtual void DisabledInit();
     virtual void DisabledPeriodic();
