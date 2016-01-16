@@ -1,10 +1,12 @@
 #include <WPILib.h>
 
 #include "EntechRobot.h"
+#include "RobotConstants.h"
 
 EntechRobot::EntechRobot()
     : m_drive(NULL)
     , m_shooter(NULL)
+	, m_camera(NULL)
     , m_lw(NULL)
 {
     m_robotSubsystems.clear();
@@ -14,9 +16,11 @@ EntechRobot::~EntechRobot() {}
 
 void EntechRobot::RobotInit()
 {
+
     m_lw = LiveWindow::GetInstance();
     m_drive = new DriveSubsystem("drive");
     m_shooter = new ShooterSubsystem("shooter");
+    m_camera = new CameraSubsystem("camera");
 
     /* 
      * Iterate through each sub-system and run the

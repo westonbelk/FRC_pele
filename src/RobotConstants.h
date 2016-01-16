@@ -1,6 +1,10 @@
 #ifndef _ROBOTCONSTANTS_H
 #define _ROBOTCONSTANTS_H
 
+// Camera definitions
+#define USB_CAMERA  1
+#define AXIS_CAMERA 0
+
 // Drive motor ports
 const uint32_t c_flmotor_PWMid = 0;
 const uint32_t c_rlmotor_PWMid = 2;
